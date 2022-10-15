@@ -34,16 +34,16 @@ export default {
         return 'personSegmentation'
       }
     },
-		chromaColorConfig: {
+    chromaColorConfig: {
 			type: Object,
-			default: () => {
-				return {
-					Rgt: 10,
-					Ggt: 80,
-					Blt: 30
+				default: () => {
+					return {
+						Rgt: 10,
+						Ggt: 80,
+						Blt: 30
 				}
 			}
-		},
+    },
     bodyPixConfig: {
       type: Object,
       required: false,
