@@ -36,13 +36,13 @@ export default {
     },
     chromaColorConfig: {
       type: Object,
-	    default: () => {
-		    return {
-			    Rgt: 10,
-			    Ggt: 80,
-			    Blt: 30
-		    }
-	    }
+      default: () => {
+        return {
+	  Rgt: 10,
+	  Ggt: 80,
+	  Blt: 30
+         }
+       }
     },
     bodyPixConfig: {
       type: Object,
@@ -102,8 +102,8 @@ export default {
      }
   },
   async mounted() {
-		this.net = await bodyPix.load(this.bodyPixConfig)
-		this.init()
+    this.net = await bodyPix.load(this.bodyPixConfig)
+    this.init()
   },
   methods: {
     init() {
@@ -191,14 +191,14 @@ export default {
         this.showBackground = !this.showBackground
       }
     },
-		shouldRemoveColor(r, g, b) {
-			if((this.R_gt < r || this.R_lt > r) &&
-				(this.G_gt < g || this.G_lt > g) &&
-				(this.B_gt < b || this.B_lt > b)) {
-				return true
-			}
-			return false
-		},
+    shouldRemoveColor(r, g, b) {
+      if((this.R_gt < r || this.R_lt > r) &&
+	(this.G_gt < g || this.G_lt > g) &&
+	(this.B_gt < b || this.B_lt > b)) {
+	return true
+	}
+	return false
+    },
     async chromaColorRemoval() {
       const imgData = this.contextTemp.getImageData(0, 0, this.width, this.height)
       this.context.clearRect(0,0, this.width, this.height)
