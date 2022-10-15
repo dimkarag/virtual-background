@@ -34,16 +34,16 @@ export default {
         return 'personSegmentation'
       }
     },
-	chromaColorConfig: {
-		type: Object,
-		default: () => {
-			return {
-				Rgt: 10,
-				Ggt: 80,
-				Blt: 30
+		chromaColorConfig: {
+			type: Object,
+			default: () => {
+				return {
+					Rgt: 10,
+					Ggt: 80,
+					Blt: 30
+				}
 			}
-		}
-	},
+		},
     bodyPixConfig: {
       type: Object,
       required: false,
@@ -87,34 +87,34 @@ export default {
           then: 0,
           elapsed: 0
       },
-		chromaColorOptions: {},
+			chromaColorOptions: {},
       reqId: 0
     }
   },
   created() {
-	if (this.removalType === 'chromaColor') {
-		this.R_gt = this.chromaColorConfig['Rgt'],
-		this.G_gt = this.chromaColorConfig['Ggt'],
-		this.B_lt = this.chromaColorConfig['Blt'],
-		this.R_lt = this.chromaColorConfig['Rlt'],
-		this.G_lt = this.chromaColorConfig['Glt'],
-		this.B_gt = this.chromaColorConfig['Bgt']
-	}
+		if (this.removalType === 'chromaColor') {
+			this.R_gt = this.chromaColorConfig['Rgt'],
+			this.G_gt = this.chromaColorConfig['Ggt'],
+			this.B_lt = this.chromaColorConfig['Blt'],
+			this.R_lt = this.chromaColorConfig['Rlt'],
+			this.G_lt = this.chromaColorConfig['Glt'],
+			this.B_gt = this.chromaColorConfig['Bgt']
+		}
   },
   async mounted() {
-    this.net = await bodyPix.load(this.bodyPixConfig)
-    this.init()
+		this.net = await bodyPix.load(this.bodyPixConfig)
+		this.init()
   },
   methods: {
     init() {
-      const srcArray = this.contentSrc.split(".")
-      const fileType = srcArray[srcArray.length - 1]
-      if (this.videoTags.includes(fileType)) {
-        this.renderVideo()
-      }
-      else if (this.imageTags.includes(fileType)) {
-        this.renderImage()
-      }
+			const srcArray = this.contentSrc.split(".")
+			const fileType = srcArray[srcArray.length - 1]
+			if (this.videoTags.includes(fileType)) {
+				this.renderVideo()
+			}
+			else if (this.imageTags.includes(fileType)) {
+				this.renderImage()
+			}
     },
     renderImage() {
       this.typeOfSrc = 'image'
@@ -175,11 +175,6 @@ export default {
         this.chromaColorRemoval()
       }
     },
-    // onPlay() {
-    //   if (this.srcElement) {
-    //     this.srcElement.muted = false
-    //   }
-    // },
     onVideoEnd() {
       cancelAnimationFrame(this.reqId)
     },
