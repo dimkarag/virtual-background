@@ -35,14 +35,14 @@ export default {
       }
     },
     chromaColorConfig: {
-			type: Object,
-			default: () => {
-				return {
-					Rgt: 10,
-					Ggt: 80,
-					Blt: 30
-				}
-			}
+	type: Object,
+	default: () => {
+		return {
+			Rgt: 10,
+			Ggt: 80,
+			Blt: 30
+		}
+	}
     },
     bodyPixConfig: {
       type: Object,
