@@ -192,14 +192,14 @@ export default {
         this.showBackground = !this.showBackground
       }
     },
-	shouldRemoveColor(r, g, b) {
-		if((this.R_gt < r || this.R_lt > r) &&
-		(this.G_gt < g || this.G_lt > g) &&
-		(this.B_gt < b || this.B_lt > b)) {
-			return true
-		}
-		return false
-	},
+		shouldRemoveColor(r, g, b) {
+			if((this.R_gt < r || this.R_lt > r) &&
+				(this.G_gt < g || this.G_lt > g) &&
+				(this.B_gt < b || this.B_lt > b)) {
+				return true
+			}
+			return false
+		},
     async chromaColorRemoval() {
       const imgData = this.contextTemp.getImageData(0, 0, this.width, this.height)
       this.context.clearRect(0,0, this.width, this.height)
