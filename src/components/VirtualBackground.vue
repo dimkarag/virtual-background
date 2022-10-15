@@ -92,14 +92,14 @@ export default {
     }
   },
   created() {
-		if (this.removalType === 'chromaColor') {
-			this.R_gt = this.chromaColorConfig['Rgt'],
-			this.G_gt = this.chromaColorConfig['Ggt'],
-			this.B_lt = this.chromaColorConfig['Blt'],
-			this.R_lt = this.chromaColorConfig['Rlt'],
-			this.G_lt = this.chromaColorConfig['Glt'],
-			this.B_gt = this.chromaColorConfig['Bgt']
-		}
+    if (this.removalType === 'chromaColor') {
+      this.R_gt = this.chromaColorConfig['Rgt'],
+      this.G_gt = this.chromaColorConfig['Ggt'],
+      this.B_lt = this.chromaColorConfig['Blt'],
+      this.R_lt = this.chromaColorConfig['Rlt'],
+      this.G_lt = this.chromaColorConfig['Glt'],
+      this.B_gt = this.chromaColorConfig['Bgt']
+     }
   },
   async mounted() {
 		this.net = await bodyPix.load(this.bodyPixConfig)
@@ -107,14 +107,13 @@ export default {
   },
   methods: {
     init() {
-			const srcArray = this.contentSrc.split(".")
-			const fileType = srcArray[srcArray.length - 1]
-			if (this.videoTags.includes(fileType)) {
-				this.renderVideo()
-			}
-			else if (this.imageTags.includes(fileType)) {
-				this.renderImage()
-			}
+      const srcArray = this.contentSrc.split(".")
+      const fileType = srcArray[srcArray.length - 1]
+      if (this.videoTags.includes(fileType)) {
+        this.renderVideo()
+      } else if (this.imageTags.includes(fileType)) {
+	this.renderImage()
+      }
     },
     renderImage() {
       this.typeOfSrc = 'image'
