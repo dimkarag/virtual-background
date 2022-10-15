@@ -87,7 +87,7 @@ export default {
           then: 0,
           elapsed: 0
       },
-			chromaColorOptions: {},
+      chromaColorOptions: {},
       reqId: 0
     }
   },
